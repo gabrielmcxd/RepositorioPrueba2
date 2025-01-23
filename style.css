@@ -1,0 +1,232 @@
+:root {
+    --primary-color: rgb(20, 20, 172);
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --secondary-bg-color: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+    --container-width: 1200px;
+    --border-radius: 10px;
+}
+
+/* Reset y Configuración Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+/* Utilidades */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    transition: opacity var(--transition-speed);
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* Sección Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 2rem;
+    transform: translateY(-10%);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    transition: transform var(--transition-speed);
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.hero-visual {
+    flex: 1;
+    height: 600px;
+    position: relative;
+    pointer-events: none;
+}
+
+.hero-visual iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Especialidades */
+.specialties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.specialty-card {
+    background-color: var(--secondary-bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+    height: 250px;
+}
+
+.specialty-card:hover {
+    transform: translateY(-5px);
+    background-color: rgb(32, 30, 30);
+}
+
+.specialty-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.specialty-card #lp {
+    color: rgb(0, 132, 255);
+}
+
+/* Sección Overview */
+.overview-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.overview-content {
+    flex: 1;
+}
+
+.overview-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.overview-visual {
+    flex: 1;
+    height: 500px;
+    pointer-events: none;
+}
+
+.overview-visual iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Sección de Proceso */
+.process-title{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.line {
+    width: 6px;
+    height: 600px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center;
+    }
+
+    .nav-link {
+        margin: 0 0.5rem;
+        font-size: 1rem;
+    }
+
+    .hero, .overview-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding-top: 4rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .hero-visual, .overview-visual {
+        height: 300px;
+        margin-top: 2rem;
+    }
+
+    .overview-content h2 {
+        font-size: 2.5rem;
+    }
+}
